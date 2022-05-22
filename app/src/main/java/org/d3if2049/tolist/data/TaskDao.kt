@@ -2,7 +2,6 @@ package org.d3if2049.tolist.data
 
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow
-import org.d3if2049.tolist.ui.tasks.SortOrder
 
 @Dao
 interface TaskDao {
