@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MVVMTodo">
-        <activity android:name="org.d3if2049.tolist.MainActivity">
+        <activity android:name="org.d3if2049.tolist.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
