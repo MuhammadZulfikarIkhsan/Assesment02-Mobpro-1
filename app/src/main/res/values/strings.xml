@@ -2,4 +2,10 @@
     <string name="app_name">To List</string>
     <string name="nama_tugas">Nama tugas</string>
     <string name="tugas_penting">Tugas penting</string>
+    <string name="berdasarkan_nama">Diurutkan berdasarkan nama</string>
+    <string name="berdasarkan_tanggal_dibuat">Diurutkan berdasarkan tanggal dibuat</string>
+    <string name="sembunyikan_completed">Sembunyikan completed</string>
+    <string name="hapus_semua_completed">Hapus semua completed</string>
+    <string name="cari">Cari</string>
+    <string name="diurutkan">Diurutkan</string>
 </resources>
