@@ -1,6 +1,6 @@
 package org.d3if2049.tolist.data
 
-import android.icu.text.DateFormat
+import java.text.DateFormat
 import android.os.Build
 import android.os.Parcelable
 import androidx.annotation.RequiresApi
