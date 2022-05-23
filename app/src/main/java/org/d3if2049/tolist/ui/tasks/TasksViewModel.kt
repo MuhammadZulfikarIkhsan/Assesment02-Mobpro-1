@@ -5,7 +5,6 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import kotlinx.coroutines.channels.Channel
 import org.d3if2049.tolist.data.TaskDao
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -13,6 +12,8 @@ import kotlinx.coroutines.launch
 import org.d3if2049.tolist.data.PreferencesManager
 import org.d3if2049.tolist.data.SortOrder
 import org.d3if2049.tolist.data.Task
+import org.d3if2049.tolist.ui.ADD_TASK_RESULT_OK
+import org.d3if2049.tolist.ui.EDIT_TASK_RESULT_OK
 
 class TasksViewModel @ViewModelInject constructor(
     private val taskDao: TaskDao,
@@ -68,9 +69,21 @@ class TasksViewModel @ViewModelInject constructor(
         tasksEventChannel.send(TasksEvent.NavigateToAddTaskScreen)
     }
 
+    fun onAddEditResult(result: Int) {
+        when (result) {
+            ADD_TASK_RESULT_OK -> showTaskSavedConfirmationMessage("Tugas ditambahkan")
+            EDIT_TASK_RESULT_OK -> showTaskSavedConfirmationMessage("Tugas diperbarui")
+        }
+    }
+
+    private fun showTaskSavedConfirmationMessage(text: String) = viewModelScope.launch {
+        tasksEventChannel.send(TasksEvent.ShowTaskSavedConfimationMessage(text))
+    }
+
     sealed class TasksEvent {
         object NavigateToAddTaskScreen : TasksEvent()
         data class NavigateToEditTaskScreen(val task: Task) : TasksEvent()
         data class ShowUndoDeleteTaskMessage(val task: Task) : TasksEvent()
+        data class ShowTaskSavedConfimationMessage(val msg: String) : TasksEvent()
     }
 }
