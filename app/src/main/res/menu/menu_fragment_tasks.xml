@@ -39,4 +39,9 @@
         android:title="@string/hapus_semua_completed"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/about_application"
+        android:title="@string/tentang_aplikasi"
+        app:showAsAction="never" />
+
 </menu>
