@@ -159,6 +159,10 @@ class TasksFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClic
                 viewModel.onDeleteAllCompletedClick()
                 true
             }
+            R.id.about_application -> {
+                findNavController().navigate(R.id.action_tasksFragment_to_aboutFragment)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

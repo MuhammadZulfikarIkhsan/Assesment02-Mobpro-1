@@ -28,6 +28,7 @@ android {
         }
     }
 
+    // Enable view binding
     buildFeatures {
         viewBinding true
     }
@@ -83,6 +84,9 @@ dependencies {
 
     // DataStore
     implementation "androidx.datastore:datastore-preferences:$dataStoreVersion"
+
+    // Material design
+    implementation 'com.google.android.material:material:1.4.0'
 }
 
 kapt {
