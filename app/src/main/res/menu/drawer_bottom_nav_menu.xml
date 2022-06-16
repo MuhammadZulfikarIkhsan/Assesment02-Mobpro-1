@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/tasksFragment"
+        android:icon="@drawable/ic_event_note"
+        android:title="Event/Tugas" />
+
+    <item
+        android:id="@+id/beritaFragment"
+        android:icon="@drawable/ic_article"
+        android:title="Berita" />
+
+</menu>
