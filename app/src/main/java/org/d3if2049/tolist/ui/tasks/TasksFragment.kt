@@ -107,6 +107,8 @@ class TasksFragment : Fragment(R.layout.fragment_tasks), TasksAdapter.OnItemClic
             }
         }
 
+        viewModel.scheduleUpdater(requireActivity().application)
+
         setHasOptionsMenu(true)
     }
 

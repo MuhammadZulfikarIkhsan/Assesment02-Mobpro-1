@@ -44,8 +44,8 @@
         android:label="@string/tentang_aplikasi"
         tools:layout="@layout/fragment_about" />
     <fragment
-        android:id="@+id/beritaFragment"
-        android:name="org.d3if2049.tolist.BeritaFragment"
-        android:label="Berita"
-        tools:layout="@layout/fragment_berita" />
+        android:id="@+id/negaraFragment"
+        android:name="org.d3if2049.tolist.ui.negara.NegaraFragment"
+        android:label="Negara"
+        tools:layout="@layout/fragment_negara" />
 </navigation>

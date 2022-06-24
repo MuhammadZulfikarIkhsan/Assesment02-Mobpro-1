@@ -7,8 +7,8 @@
         android:title="Event/Tugas" />
 
     <item
-        android:id="@+id/beritaFragment"
-        android:icon="@drawable/ic_article"
-        android:title="Berita" />
+        android:id="@+id/negaraFragment"
+        android:icon="@drawable/ic_location"
+        android:title="Negara" />
 
 </menu>

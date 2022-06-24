@@ -12,7 +12,17 @@
     <string name="share">Share</string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
     <string name="copyright">To List adalah aplikasi untuk menyimpan berbagai daftar tugas-tugas, sehingga seseorang dapat mengetahui daftar tugas-tugas atau kegiatan yang harus dilakukan.
+        \n\nAdapun fitur baru pada aplikasi ini adalah fitur menampilkan daftar data negara seperti nama negara, mata uang, kode negara.
         \n\nJika anda ingin menemui projectnya, klik url https://github.com/MuhammadZulfikarIkhsan/Assesment02-Mobpro-1"
         \nCopyright © 2022 Muhammad Zulfikar Ikhsan. All rights reserved.
     </string>
+
+    <!-- Fragment Negara -->
+    <string name="message">%1$s diklik!</string>
+    <string name="koneksi_error">Oops, Tidak ada Koneksi Internet</string>
+    <string name="koneksi_error_deskripsi">Pastikan wifi atau data seluler\ndihidupkan lalu coba lagi</string>
+    <string name="channel_name">Updater</string>
+    <string name="channel_desc">Update data negara otomatis</string>
+    <string name="notif_title">Ada tugas? ayo tulis!</string>
+    <string name="notif_text">Tulis sekarang biar ingat..</string>
 </resources>

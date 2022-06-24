@@ -1,19 +1,26 @@
 package org.d3if2049.tolist.ui.tasks
 
+import android.app.Application
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
+import androidx.work.ExistingWorkPolicy
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import kotlinx.coroutines.channels.Channel
 import org.d3if2049.tolist.data.TaskDao
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
+import org.d3if2049.tolist.UpdateWorker
 import org.d3if2049.tolist.data.PreferencesManager
 import org.d3if2049.tolist.data.SortOrder
 import org.d3if2049.tolist.data.Task
 import org.d3if2049.tolist.ui.ADD_TASK_RESULT_OK
 import org.d3if2049.tolist.ui.EDIT_TASK_RESULT_OK
+import org.d3if2049.tolist.ui.MainActivity
+import java.util.concurrent.TimeUnit
 
 class TasksViewModel @ViewModelInject constructor(
     private val taskDao: TaskDao,
@@ -90,5 +97,17 @@ class TasksViewModel @ViewModelInject constructor(
         data class ShowUndoDeleteTaskMessage(val task: Task) : TasksEvent()
         data class ShowTaskSavedConfimationMessage(val msg: String) : TasksEvent()
         object NavigateToDeleteAllCompletedScreen : TasksEvent()
+    }
+
+    fun scheduleUpdater(app: Application) {
+        val request = OneTimeWorkRequestBuilder<UpdateWorker>()
+            .setInitialDelay(1, TimeUnit.MINUTES)
+            .build()
+
+        WorkManager.getInstance(app).enqueueUniqueWork(
+            MainActivity.CHANNEL_ID,
+            ExistingWorkPolicy.REPLACE,
+            request
+        )
     }
 }
